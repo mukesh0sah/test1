@@ -78,7 +78,6 @@ echo "Completed"
 # done < "$file"
 repo=("demo_backup", "repo_backup", "test2")
 for i in "${repo[@]}"; do
-
    cd "$i"
    git init
    echo "executed inin command"
@@ -88,7 +87,7 @@ for i in "${repo[@]}"; do
    echo "executed commit command"
    git remote add main https://github.com/mukesh0sah/$i.git
    echo "executed remote command"
-   git push main --mirror
+   git push main
    echo "executed push command"
    cd ..
 done

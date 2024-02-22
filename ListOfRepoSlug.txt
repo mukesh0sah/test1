@@ -37,3 +37,6 @@
  test-repo-backup/repo_backup
  test-repo-backup/demo_backup
  test-repo-backup/test2
+ test-repo-backup/repo_backup
+ test-repo-backup/demo_backup
+ test-repo-backup/test2
