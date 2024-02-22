@@ -7,9 +7,9 @@ KEY2=$2
 num=$3
 awk -F"[,:}]" '{for(i=1;i<=NF;i++){if($i~/'$KEY'\042/){print ""; printf $(i+1)}; if( -z "$KEY2"){if($i~/'$KEY2'\042/){print $(i+1)}}}}' | tr -d '"' | sed -n ${num}p; }
 
-userName=$1
-password=$2
-accountName=$3
+userName="mukesh0sah"
+password="ATBBN6zGFR44RMwJSdQSNpq2c5Be913ED2FB"
+accountName="test-repo-backup"
 #echo $userName
 #echo $password
 #echo $accountName
@@ -39,9 +39,19 @@ count=1
 while IFS= read line; 
 do 
    line="$(echo -e "${line}" | tr -d '[:space:]')";
+   repoName=$(basename "$line")
    printf "$count. Cloning $line \n"
    git clone --mirror https://$userName:$password@bitbucket.org/$line
    printf "Completed\n"
-   count=$(($count+1))   
-done <"$file"
+   count=$(($count+1)) 
+   echo "$reponame"
+   zip -r repoBackup.zip "$repoName.git"
+   sed -i '1d' "$file"
+done < "$file"
+# zip target.zip demo_backup.git 
+# echo -n > ListOfRepoSlug.txt
 echo "Completed"
+
+
+
+# curl -X POST -i -H "Authorization: Bearer <access_token>" -H "Content-Length: <file_size>" -s "<site_url>/_api/web/GetFolderByServerRelativeUrl('<folder_url>')/Files/add(url='<file_name>',overwrite=true)" --data-binary "@<file_path>"
