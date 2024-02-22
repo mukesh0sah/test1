@@ -1,8 +1,0 @@
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = true
-	ignorecase = true
-	precomposeunicode = true
-[remote "origin"]
-	url = https://mukesh0sah:ATBBN6zGFR44RMwJSdQSNpq2c5Be913ED2FB@bitbucket.org/test-repo-backup/test2
