@@ -46,13 +46,14 @@ do
    count=$(($count+1)) 
 
 
-   # echo "$reponame"
-   # cd "$reponame.git"
-   # git init
-   # git add .
-   # git commit -m "helllllo"
-   # git remote add main https://github.com/mukesh0sah/test1.git
-   # git push main --mirror
+   echo "$reponame"
+   cd "$reponame"
+   git init
+   git add .
+   git commit -m "helllllo"
+   git remote add main https://github.com/mukesh0sah/$repoName.git
+   git push main --mirror
+   cd ..
 
 
 
@@ -66,7 +67,7 @@ done < "$file"
 # echo -n > ListOfRepoSlug.txt
 echo "Completed"
 
-cd "repo_backup.git"
+cd "demo_backup"
 git init
 echo "executed inin command"
 git add .
