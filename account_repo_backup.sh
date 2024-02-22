@@ -53,7 +53,7 @@ do
    git commit -m "helllllo"
    git remote add main https://github.com/mukesh0sah/$repoName.git
    git push main --mirror
-   cd ..
+   
 
 
 
@@ -67,17 +67,17 @@ done < "$file"
 # echo -n > ListOfRepoSlug.txt
 echo "Completed"
 
-cd "demo_backup"
-git init
-echo "executed inin command"
-git add .
-echo "executed add command"
-git commit -m "helllllo"
-echo "executed commit command"
-git remote add main https://github.com/mukesh0sah/test1.git
-echo "executed remote command"
-git push main --mirror
-echo "executed push command"
+# cd "demo_backup"
+# git init
+# echo "executed inin command"
+# git add .
+# echo "executed add command"
+# git commit -m "helllllo"
+# echo "executed commit command"
+# git remote add main https://github.com/mukesh0sah/test1.git
+# echo "executed remote command"
+# git push main --mirror
+# echo "executed push command"
 
 
 # curl -X POST -i -H "Authorization: Bearer <access_token>" -H "Content-Length: <file_size>" -s "<site_url>/_api/web/GetFolderByServerRelativeUrl('<folder_url>')/Files/add(url='<file_name>',overwrite=true)" --data-binary "@<file_path>"
