@@ -87,7 +87,7 @@ for i in "${repo[@]}"; do
    echo "executed commit command"
    git remote add main https://github.com/mukesh0sah/$i.git
    echo "executed remote command"
-   git push main
+   git push main --mirror
    echo "executed push command"
    cd ..
 done
