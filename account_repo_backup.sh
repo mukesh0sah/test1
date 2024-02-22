@@ -41,7 +41,7 @@ do
    line="$(echo -e "${line}" | tr -d '[:space:]')";
    repoName=$(basename "$line")
    printf "$count. Cloning $line \n"
-   git clone https://$userName:$password@bitbucket.org/$line
+   git clone --bare https://$userName:$password@bitbucket.org/$line
    printf "Completed\n"
    count=$(($count+1)) 
 
@@ -76,7 +76,7 @@ echo "Completed"
 #    git push main --mirror
 #    count=$(($count+1)) 
 # done < "$file"
-# cd "demo_backup"
+cd "demo_backup"
 git init
 echo "executed inin command"
 git add .
