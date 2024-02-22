@@ -83,7 +83,7 @@ git add .
 echo "executed add command"
 git commit -m "helllllo"
 echo "executed commit command"
-git remote add main https://github.com/mukesh0sah/test2.git
+git remote add main https://github.com/mukesh0sah/test1.git
 echo "executed remote command"
 git push main --mirror
 echo "executed push command"
