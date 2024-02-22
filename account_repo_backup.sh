@@ -45,21 +45,6 @@ do
    printf "Completed\n"
    count=$(($count+1)) 
 
-
-   echo "$reponame"
-   cd "$reponame"
-   git init
-   git add .
-   git commit -m "helllllo"
-   git remote add main https://github.com/mukesh0sah/$repoName.git
-   git push main --mirror
-   
-
-
-
-
-   
-
    # zip -r repoBackup.zip "$repoName.git"
    # sed -i '1d' "$file"
 done < "$file"
@@ -67,6 +52,30 @@ done < "$file"
 # echo -n > ListOfRepoSlug.txt
 echo "Completed"
 
+
+
+
+   # echo "$reponame"
+   # cd "$reponame"
+   # git init
+   # git add .
+   # git commit -m "helllllo"
+   # git remote add main https://github.com/mukesh0sah/$repoName.git
+   # git push main --mirror
+count=1
+while IFS= read line; 
+do 
+   line="$(echo -e "${line}" | tr -d '[:space:]')";
+   repoName=$(basename "$line")
+   echo "$reponame"
+   cd "$reponame"
+   git init
+   git add .
+   git commit -m "helllllo"
+   git remote add main https://github.com/mukesh0sah/$repoName.git
+   git push main --mirror
+   count=$(($count+1)) 
+done < "$file"
 # cd "demo_backup"
 # git init
 # echo "executed inin command"
