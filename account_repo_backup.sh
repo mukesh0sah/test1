@@ -42,6 +42,8 @@ do
    repoName=$(basename "$line")
    printf "$count. Cloning $line \n"
    git clone https://$userName:$password@bitbucket.org/$line
+
+   # git clone https://github.tools.sap/C5368563/test_repo_backup
    printf "Completed\n"
    count=$(($count+1)) 
 
@@ -53,42 +55,14 @@ done < "$file"
 echo "Completed"
 
 
-
-
-   # echo "$reponame"
-   # cd "$reponame"
-   # git init
-   # git add .
-   # git commit -m "helllllo"
-   # git remote add main https://github.com/mukesh0sah/$repoName.git
-   # git push main --mirror
-# count=1
-# while IFS= read line; 
-# do 
-#    line="$(echo -e "${line}" | tr -d '[:space:]')";
-#    repoName=$(basename "$line")
-#    echo "$reponame"
-#    cd "$reponame"
-#    git init
-#    git add .
-#    git commit -m "helllllo"
-#    git remote add main https://github.com/mukesh0sah/$repoName.git
-#    git push main --mirror
-#    count=$(($count+1)) 
-# done < "$file"
 repo=("demo_backup", "repo_backup", "test2")
 for i in "${repo[@]}"; do
    cd "$i"
    git init
-   echo "executed inin command"
    git add .
-   echo "executed add command"
    git commit -m "helllllo"
-   echo "executed commit command"
    git remote add main https://github.com/mukesh0sah/$i.git
-   echo "executed remote command"
-   git push main
-   echo "executed push command"
+   git push main --mirror
    cd ..
 done
 
